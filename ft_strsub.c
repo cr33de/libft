@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdomingo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 15:13:06 by rdomingo          #+#    #+#             */
-/*   Updated: 2019/05/29 13:35:01 by rdomingo         ###   ########.fr       */
+/*   Created: 2019/05/28 11:20:42 by rdomingo          #+#    #+#             */
+/*   Updated: 2019/06/04 10:28:39 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strsub(char const *s, unsigned int strat, size_t len)
 {
-	char	*str;
-	size_t	i;
+	unsigned int	i;
+	char			*str;
 
 	i = 0;
-	str = (char *)s;
-	while (i > n)
+	str = (char *)malloc(sizeof(char) * len + 1);
+	if (str == NULL)
+		return (NULL);
+	while (i < len)
 	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((char *)s + i);
+		str[i] = s[strat + i];
 		i++;
 	}
-	return (NULL);
+	str[i] = '\0';
+	return (str);
 }

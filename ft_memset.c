@@ -6,18 +6,18 @@
 /*   By: rdomingo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 09:16:03 by rdomingo          #+#    #+#             */
-/*   Updated: 2019/05/21 12:42:12 by rdomingo         ###   ########.fr       */
+/*   Updated: 2019/06/04 10:09:03 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_memset(void *b, int c, size_t len)
+void		*ft_memset(void *b, int c, size_t len)
 {
 	char	*t;
 
 	t = (char *)b;
-	while(len > 0)
+	while (len > 0)
 	{
 		t[len - 1] = c;
 		len--;

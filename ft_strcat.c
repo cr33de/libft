@@ -6,22 +6,22 @@
 /*   By: rdomingo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 09:07:33 by rdomingo          #+#    #+#             */
-/*   Updated: 2019/05/22 09:35:10 by rdomingo         ###   ########.fr       */
+/*   Updated: 2019/06/04 10:48:25 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *str1, const char *str2)
+char		*ft_strcat(char *str1, const char *str2)
 {
-	char *i = str1;
+	char	*i;
 
-	while(*str1 != '\0')
+	i = str1;
+	while (*str1 != '\0')
 	{
 		str1++;
 	}
-
-	while(*str2 != '\0')
+	while (*str2 != '\0')
 	{
 		*str1 = *str2;
 		str1++;

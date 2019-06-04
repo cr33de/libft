@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdomingo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 15:13:06 by rdomingo          #+#    #+#             */
-/*   Updated: 2019/05/29 13:35:01 by rdomingo         ###   ########.fr       */
+/*   Created: 2019/05/21 08:52:26 by rdomingo          #+#    #+#             */
+/*   Updated: 2019/06/04 10:15:38 by event            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *s, int c, size_t n)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
-	char	*str;
 	size_t	i;
+	size_t	k;
+	size_t	j;
 
+	j = 0;
 	i = 0;
-	str = (char *)s;
-	while (i > n)
-	{
-		if ((unsigned char)str[i] == (unsigned char)c)
-			return ((char *)s + i);
+	k = 0;
+	while (dst[i] && j < size)
 		i++;
+	while ((src[k]) && ((j + k + 1) < size))
+	{
+		dst[j + k] = src[k];
+		k++;
 	}
-	return (NULL);
+	if (j != size)
+		dst[j + k] = '\0';
+	return (j + ft_strlen(src));
 }
