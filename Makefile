@@ -6,7 +6,7 @@
 #    By: rdomingo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/20 08:58:04 by rdomingo          #+#    #+#              #
-#    Updated: 2019/06/11 10:06:25 by rdomingo         ###   ########.fr        #
+#    Updated: 2019/07/09 09:53:52 by rdomingo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ FLAG = -Wall -Werror -Wextra
 NAME = libft.a
 
 SRC = ft_atoi.c \
+	  ft_isspace.c \
 	  ft_memset.c \
 	  ft_bzero.c \
 	  ft_memcpy.c \
@@ -71,9 +72,12 @@ SRC = ft_atoi.c \
 	  ft_lstdel.c \
 	  ft_lstadd.c \
 	  ft_lstiter.c \
+	  get_next_line.c \
 	  ft_lstmap.c \
 
 OBJ = ft_atoi.o \
+	  get_next_line.o \
+	  ft_isspace.o \
 	  ft_memset.o \
 	  ft_bzero.o \
 	  ft_memcpy.o \
@@ -136,7 +140,7 @@ OBJ = ft_atoi.o \
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	gcc $(FLAGS) -c $(SRC)
+	gcc $(FLAG) -c $(SRC)
 	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 
